@@ -1,4 +1,4 @@
-module openvswitch-custom 1.0;
+policy_module(openvswitch-custom 1.0)
 
 require {
         type openvswitch_t;
@@ -7,3 +7,5 @@ require {
 
 #============= openvswitch_t ==============
 allow openvswitch_t self:netlink_socket { setopt getopt create connect getattr write read };
+
+domain_read_all_domains_state(openvswitch_t)
